@@ -34,7 +34,7 @@ v3dR <- function(full_filepath){
 
   df$item <- factor(df$item)
 
-  df$value <- as.numeric(levels(df$value))[df$value]
+  df$value <- as.numeric(df$value)
   df$item <- as.numeric(levels(df$item))[df$item]
 
 

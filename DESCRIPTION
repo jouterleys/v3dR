@@ -8,11 +8,11 @@ Description: Import V3D ASCII Txt File To R
 License: MIT License
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
+    magrittr,
     data.table,
     tidyr,
     dplyr,
-    magrittr
 Suggests: 
     ggplot2
 RoxygenNote: 7.1.1
