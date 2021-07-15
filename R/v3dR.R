@@ -2,6 +2,7 @@
 #' @description Import V3D ASCII Txt File To R
 #' @param full_filepath Full filepath to txt file
 #' @return Dataframe containing txt data in long format
+#' @importFrom magrittr "%>%"
 #' @examples
 #' full_filepath = file.path("C:/local_repos/github/v3dR/data/L_A.txt")
 #' df <- v3dR(full_filepath)
