@@ -1,12 +1,30 @@
-How to install a package from GitHub
+# How to install an R package from GitHub
 How do you install a package that’s sitting on GitHub?
 
-First, you need to install the devtools package. You can do this from CRAN. Invoke R and then type
+1. Install the devtools package. From R install as normal.
 
+```R
 install.packages("devtools")
-Load the devtools package.
+```
 
+2. Attach the devtools package.
+
+```R
 library(devtools)
-In most cases, you just use install_github("author/package"). For example, with this v3dR package, which exists at github.com/jouterleys/v3dR, you’d type
+```
 
+3. Try install_github("author/package"). For this package, which exists at github.com/jouterleys/v3dR, you’d type
+
+```R
 install_github("jouterleys/v3dR")
+```
+
+4. Don't forget to attach the package before use!
+
+```R
+library(v3dR)
+
+full_filepath = file.path("C:/ASCII.txt")
+df <- v3dR(full_filepath)
+
+```
