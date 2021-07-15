@@ -32,9 +32,14 @@ v3dR <- function(full_filepath){
                             names_to = "item",
                             values_to = "value")
 
-  df$item <- factor(df$item)
 
-  df$value <- as.numeric(df$value)
+  if (is.factor(df$value)) {
+    df$value <- as.numeric(levels(df$value))[df$value]
+  } else {
+    df$value <- as.numeric(df$value)
+  }
+
+  df$item <- factor(df$item)
   df$item <- as.numeric(levels(df$item))[df$item]
 
 
