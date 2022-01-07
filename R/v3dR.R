@@ -11,7 +11,7 @@
 v3dR <- function(full_filepath){
 
   df <- data.table::fread(file = full_filepath, header=FALSE, stringsAsFactors = F)
-  df <- setDF(df)
+  df <- data.table::setDF(df)
   header <- df[c(1:5),c(2:ncol(df))]
   data <- df[c(6:nrow(df)),c(2:ncol(df))]
   item <- df[c(6:nrow(df)),1]
