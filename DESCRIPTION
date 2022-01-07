@@ -1,8 +1,9 @@
 Package: v3dR
 Type: Package
 Title: Import V3D ASCII Txt File To R
-Version: 0.1.1
+Version: 0.1.2
 Author: Jereme Outerleys
+Maintainer: Jereme Outerleys <Jereme.Outerleys@gmail.com>
 Description: Import V3D ASCII Txt File To R
     Used to import the txt files exported using the Export_Data_To_Ascii_File from Visual3D.
 License: MIT License

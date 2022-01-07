@@ -10,7 +10,8 @@
 
 v3dR <- function(full_filepath){
 
-  df <- read.delim(file = full_filepath, header=FALSE, stringsAsFactors = F)
+  #df <- read.delim(file = full_filepath, header=FALSE, stringsAsFactors = F)
+  df <- data.table::fread(file = full_filepath, header=FALSE, stringsAsFactors = F)
 
   header <- df[c(1:5),c(2:ncol(df))]
 
