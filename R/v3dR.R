@@ -10,29 +10,24 @@
 
 v3dR <- function(full_filepath){
 
-  df <- read.delim(file = full_filepath, header=FALSE, stringsAsFactors = F)
-  #df <- data.table::fread(file = full_filepath, header=FALSE, stringsAsFactors = F)
-
+  df <- data.table::fread(file = full_filepath, header=FALSE, stringsAsFactors = F)
+  df <- setDF(df)
   header <- df[c(1:5),c(2:ncol(df))]
-
   data <- df[c(6:nrow(df)),c(2:ncol(df))]
-
   item <- df[c(6:nrow(df)),1]
-
-  header <- data.frame(t(header))
-
-  data <- data.frame(t(data))
-
+  header <- t(header)
+  data <- t(data)
   df <- cbind(header,data)
+  df <- as.data.table(df)
+
 
   new_colNames <- c("c3d_name","signal_names","signal_types","signal_folder","signal_components",item)
 
   data.table::setnames(df, colnames(df), new_colNames)
 
-  df <- tidyr::pivot_longer(df, cols = -c("c3d_name","signal_names","signal_types","signal_folder","signal_components"),
+  df <- tidyr::pivot_longer(as.data.frame(df), cols = -c("c3d_name","signal_names","signal_types","signal_folder","signal_components"),
                             names_to = "item",
                             values_to = "value")
-
 
   if (is.factor(df$value)) {
     df$value <- as.numeric(levels(df$value))[df$value]
