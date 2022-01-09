@@ -18,7 +18,7 @@ v3dR <- function(full_filepath){
   header <- t(header)
   data <- t(data)
   df <- cbind(header,data)
-  df <- as.data.table(df)
+  df <- data.table::as.data.table(df)
 
 
   new_colNames <- c("c3d_name","signal_names","signal_types","signal_folder","signal_components",item)
@@ -45,6 +45,8 @@ v3dR <- function(full_filepath){
 
   df <- df %>%
     dplyr::relocate(instance, .after = signal_components)
+
+  df <-as.data.frame(df)
 
   return(df)
 
