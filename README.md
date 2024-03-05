@@ -47,3 +47,23 @@ df <- v3dR(full_filepath)
         device = "tiff",
         width = 8, height = 8,dpi=300)
 ```
+
+## How to update v3dR on my system?
+
+1. Open R or Rstudio (best to close all R or Rstudio sessions first)
+
+2. Use remove.packages()
+
+```R
+remove.packages("v3dR")
+```
+3. Then follow steps 2. and 3. from the Install
+
+```R
+# attach devtools library
+library(devtools)
+
+# install v3dR from github
+install_github("jouterleys/v3dR")
+```
+
